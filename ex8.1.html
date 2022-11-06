@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script scr="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script>
+            var app= angular.module("myapp",[]);
+            app.controller("mycontrol",function($scope){
+                $scope.submit=function(){
+                    $scope.output=(parseInt($scope.e)+parseInt($scope.a)+parseInt($scope.b)+parseInt($scope.c)+parseInt($scope.d));
+                }
+            });
+        </script>
+    </head>
+    <link rel="stylesheet" href="ex8.1.css">
+    <body ng-app="myapp" ng-controller="mycontrol">
+        <h1  style="text-align:center;background-color: blue;color:white">My College</h1>
+        <h4 style="text-align: center;color: red;">Grade Evalution</h4>
+        <br><br>
+        <div class="d1">
+        <label style="color:blue">Student Name</label><br>
+        <input type="text" placeholder="David" ><br><br>
+        <label style="color:blue">Student RegNo</label><br>
+        <input type="text" placeholder="234" ><br><br>
+        <label style="color:blue">Course 1 Marks</label><br>
+        <input type="text" placeholder="100" ng-model="e"><br><br>
+        <label style="color:blue">course 2 Marks</label><br>
+        <input type="text" placeholder="98" ng-model="a"><br><br>
+        <label style="color:blue">course 3 Marks</label><br>
+        <input type="text" placeholder="95" ng-model="b"><br><br>
+        <label style="color:blue">course 4 Marks</label><br><br>
+        <input type="text" placeholder="91" ng-model="c"><br><br>
+        <label style="color:blue">course 5 marks</label><br>
+        <input type="text" placeholder="93" ng-model="d"><br><br>
+
+        
+        <button ng-click="submit()">Find Grade </button><br><br>
+        The Final Avg: <span ng-bind="output"></span>
+        </div>
+    </body>
+</html>
